@@ -1,0 +1,80 @@
+.roadmap {
+    @extend %of-hidden;
+
+    @include breakpoint(lg) {
+        background-image: url(../images/roadmap/road.png);
+        background-position: bottom;
+        background-size: cover;
+    }
+
+    &__item {
+        padding-block: 25px;
+
+        //use no-border class to remove the border from item
+        &:not(.no-border) {
+            border-bottom: 1px solid rgba($white-color, $alpha: .10);
+        }
+    }
+
+    &__inner {
+        @extend %flex;
+        @extend %align-items-center;
+        @extend %justify-between;
+        gap: 40px;
+        flex-direction: column;
+        text-align: center;
+
+        @include breakpoint(md) {
+            flex-direction: row;
+            text-align: left;
+        }
+
+    }
+
+    &__thumb {
+        @include box(150px);
+        background-image: linear-gradient(180deg, rgba(168, 210, 45, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+
+        //different gradient background color modifier class
+        &--bg-2 {
+            background-image: linear-gradient(180deg, rgba(254, 220, 116, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        &--bg-3 {
+            background-image: linear-gradient(180deg, rgba(43, 255, 255, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        &--bg-4 {
+            background-image: linear-gradient(180deg, rgba(50, 165, 90, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        &--bg-5 {
+            background-image: linear-gradient(180deg, rgba(252, 136, 184, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+        }
+
+        span {
+            @include font-size(36px);
+            font-weight: 700;
+            color: $white-color;
+        }
+    }
+
+    &__content {
+        @include breakpoint(md) {
+            width: calc(100% - 200px);
+        }
+
+        h4 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @extend %mb-0;
+            max-inline-size: 92ch;
+
+        }
+    }
+}

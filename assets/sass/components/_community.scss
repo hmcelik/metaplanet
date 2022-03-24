@@ -1,0 +1,31 @@
+.community {
+
+    &__wrapper {
+
+        @include breakpoint(md) {
+            background-image: url(../images/community/bg.png);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            padding-block: 60px;
+        }
+
+
+        @include breakpoint(xxl) {
+            padding-block: 90px;
+        }
+    }
+
+    &__content {
+        h2 {
+            @extend %mb-20;
+        }
+
+        p {
+            @extend %mb-20;
+
+            @include breakpoint(lg) {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
